@@ -1,0 +1,54 @@
+[{
+  "area" : "BTM 2nd stage",
+  "hotels":[
+    {
+      "id": 1,
+      "name": "Dominos",
+      "address": "545, 11th Cross Rd, Mico Layout, Stage 2, BTM 2nd Stage, Bengaluru, Karnataka 560076, India",
+      "delivery time": 45,
+      "delivery fees": 25,
+      "min order": 200,
+      "on time": 99,
+      "rating": 3.5,
+      "timings": "12-15,17-23"
+    },
+    {
+      "id": 2,
+      "name": "Piza hut",
+      "address": "600, 11th Cross Rd, Mico Layout, Stage 2, BTM 2nd Stage, Bengaluru, Karnataka 560076, India",
+      "delivery time": 30,
+      "delivery fees": 15,
+      "min order": 500,
+      "on time": 100,
+      "rating": 4,
+      "timings": "09-15,17-23"
+    }
+  ]
+},
+{
+"area" : "Marathahalli",
+"hotels":[
+{
+"id": 1,
+"name": "Dominos",
+"address": "545, 11th Cross Rd, Mico Layout, Stage 2, BTM 2nd Stage, Bengaluru, Karnataka 560076, India",
+"delivery time": 45,
+"delivery fees": 25,
+"min order": 200,
+"on time": 99,
+"rating": 3.5,
+"timings": "12-15,17-23"
+},
+{
+"id": 2,
+"name": "Piza hut",
+"address": "600, 11th Cross Rd, Mico Layout, Stage 2, BTM 2nd Stage, Bengaluru, Karnataka 560076, India",
+"delivery time": 30,
+"delivery fees": 15,
+"min order": 500,
+"on time": 100,
+"rating": 4,
+"timings": "09-15,17-23"
+}
+]
+}]
