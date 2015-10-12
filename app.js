@@ -48,7 +48,8 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
-  mongoose.connect('mongodb://localhost/nodejsdb');
+//  mongoose.connect('mongodb://localhost/nodejsdb');
+mongoose.connect('mongodb://10.240.55.224:80/my_database');
 }
 
 // production error handler

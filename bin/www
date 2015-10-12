@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('FreshExpress:server');
 var http = require('http');
+var argv = require('optimist').argv;
 
 /**
  * Get port from environment and store in Express.
@@ -25,7 +26,8 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(8080, argv.fe_ip);
+console.log("App listening on port 3000");
 server.on('error', onError);
 server.on('listening', onListening);
 
