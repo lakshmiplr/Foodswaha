@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var geocoder = require('geocoder');
+var argv = require('optimist').argv;
 
 
 var routes = require('./routes/index');
@@ -49,7 +50,7 @@ if (app.get('env') === 'development') {
     });
   });
 //  mongoose.connect('mongodb://localhost/nodejsdb');
-mongoose.connect('mongodb://10.240.55.224:80/my_database');
+	mongoose.connect('mongodb://' + argv.be_ip + '/my_database');
 }
 
 // production error handler

@@ -8,6 +8,8 @@ var hotelSchema = new mongoose.Schema(
                 id: String,
                 name: String,
                 address: String,
+                area: String,
+                imageurl: String,
                 deliverytime: Number,
                 deliveryfees: Number,
                 minorder: Number,
