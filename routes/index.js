@@ -7,18 +7,28 @@ var path = require('path');
 
 router.get('/hotels', function(req, res, next) {
     var hotels = require("../model/hotels");
+    console.log(hotels);
     hotels.find({area:'Marathahalli'}).lean().exec(function(err,hotels){
         res.json(hotels);
     });
 });
 
-function getHotels(area,cb){
-    var hotels = require("../model/hotels");
-    hotels.find().where('area',area).lean().exec(function(err,hotels){
-       cb(hotels);
+router.get('/hotel/:hotelid', function(req, res, next) {
+    var hotelid = req.params.hotelid;
+    console.log("Hotel id "+hotelid);
+    var menus = require("../model/menu");
+    var convertedJSON = {};
+    menus.find().where('hotelid',hotelid).lean().exec(function(err,menus){
+    	if(menus.length > 0){
+        	try{
+                convertedJSON = JSON.parse(JSON.stringify(menus[0]));
+        	}catch(err) {
+        		console.log(err);
+        	}  
+    	}
+    	res.json(convertedJSON);
     });
-
-};
+}); 
 
 router.post('/location', function(req, res, next) {
 
@@ -75,5 +85,13 @@ router.post('/location', function(req, res, next) {
 
     });
 });
+
+function getHotels(area,cb){
+    var hotels = require("../model/hotels");
+    hotels.find().where('area',area).lean().exec(function(err,hotels){
+       cb(hotels);
+    });
+
+};
 
 module.exports = router;
