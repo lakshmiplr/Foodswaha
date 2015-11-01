@@ -7,7 +7,6 @@ var path = require('path');
 
 router.get('/hotels', function(req, res, next) {
     var hotels = require("../model/hotels");
-    console.log(hotels);
     hotels.find({area:'Marathahalli'}).lean().exec(function(err,hotels){
         res.json(hotels);
     });
