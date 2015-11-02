@@ -18,7 +18,7 @@ router.get('/hotel/:hotelid', function(req, res, next) {
     var menus = require("../model/menu");
     var convertedJSON = {};
     menus.find().where('hotelid',hotelid).lean().exec(function(err,menus){
-    	if(menus.length > 0){
+    	if( typeof menus !=='undefined' && menus.length > 0){
         	try{
                 convertedJSON = JSON.parse(JSON.stringify(menus[0]));
         	}catch(err) {
@@ -67,7 +67,7 @@ router.post('/location', function(req, res, next) {
         getHotels(area, function (hotels) {
             console.log("hotels "+hotels[0]);
             var convertedJSON = {};
-            if(hotels.length > 0){
+            if(typeof hotels !== 'undefined' && hotels.length > 0){
             	try{
                     convertedJSON = JSON.parse(JSON.stringify(hotels[0]));
             	}catch(err) {
