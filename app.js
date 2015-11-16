@@ -50,7 +50,7 @@ if (app.get('env') === 'development') {
     });
   });
 //  mongoose.connect('mongodb://localhost/nodejsdb');
-    mongoose.connect('mongodb://' + argv.be_ip + '/nodejsdb');
+    mongoose.connect('mongodb://' + argv.be_ip + '/my_database');
 }
 
 // production error handler
