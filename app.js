@@ -9,7 +9,7 @@ var argv = require('optimist').argv;
 
 
 var routes = require('./routes/index');
-//var items = require('./routes/items');
+var address = require('./routes/address');
 
 var app = express();
 
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-//app.use('/items',items);
+app.use('/address',address);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -50,7 +50,7 @@ if (app.get('env') === 'development') {
     });
   });
 //  mongoose.connect('mongodb://localhost/nodejsdb');
-    mongoose.connect('mongodb://' + argv.be_ip + '/my_database');
+    mongoose.connect('mongodb://' + argv.be_ip + '/nodejsdb');
 }
 
 // production error handler

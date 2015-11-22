@@ -85,26 +85,6 @@ router.post('/location', function(req, res, next) {
     });
 });
 
-router.post('/address', function(req, res, next) {
-	 var email = req.body.email;
-	 console.log("email "+email);
-	 var address = require("../model/address");
-	 var convertedJSON = {};
-	 address.find().where('email',email).lean().exec(function(err, address) {
-		 console.log("results "+address[0]);
-		if (typeof address !== 'undefined' && address.length > 0) {
-			try {
-				 console.log("results "+address[0]);
-				convertedJSON = JSON.parse(JSON.stringify(address[0]));
-			} catch (err) {
-				console.log(err);
-			}
-		}
-		res.json(convertedJSON);
-	});
-   
-});
-
 function getHotels(area,cb){
     var hotels = require("../model/hotels");
     hotels.find().where('area',area).lean().exec(function(err,hotels){
