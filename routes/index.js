@@ -63,7 +63,7 @@ router.post('/location', function(req, res, next) {
             else if (addr.types[0] == ['locality'])       // City
                 city = addr.long_name;
         }
-        console.log("City: "+city + " Country: "+country + " state: "+state+" Area: "+area+" address: "+address);
+        console.log("City: "+city + " Country: "+country + " state: "+state+" Area: "+area+" address: "+address + " zip "+zip);
         getHotels(area, function (hotels) {
             console.log("hotels "+hotels[0]);
             var convertedJSON = {};
@@ -79,6 +79,7 @@ router.post('/location', function(req, res, next) {
             }
             	
             convertedJSON.address = fulladdress;
+            convertedJSON.pincode = zip;
             res.json(convertedJSON);
         });
 
