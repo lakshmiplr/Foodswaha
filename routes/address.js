@@ -47,6 +47,7 @@ router.post('/update', function(req, res, next){
 	var address = require("../model/address");
 	var newadd = new address(addr);
 	delete addr._id;
+	delete addr.__v;
 	address.findOneAndUpdate(query, addr, {upsert:true}, function(err, doc){
 	    if (err) return res.send(500, { error: err });
 	    return res.send("succesfully saved");
