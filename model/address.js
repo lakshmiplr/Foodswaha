@@ -6,8 +6,8 @@ var addressSchema = new mongoose.Schema(
         mobile: String,
         addresses: [
             {
-                flatnumber: String,
-                streetdetails: String,
+                flatNumber: String,
+                streetDetails: String,
                 area: String,
                 city: String,
                 pincode: String,
