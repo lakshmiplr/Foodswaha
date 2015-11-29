@@ -1,0 +1,29 @@
+
+{
+	"email":"lakshmi.plr@gmail.com"
+	"hotelid":1,
+	"hotelname":"Dominos",
+	"area":"BTM layout",
+	"date":"29-Nov-2015",
+	"time":"9:30pm",
+	"hotelimageurl":"/images/dominos.jpg";
+	"deliverytype":"delivery",
+	"address":"#545,btm layout,bangalore.",
+	"total":450,
+	"status": "live",
+	"cart" :[{
+			"itemname":"Egg burji",
+			"itemprice": 80,
+			"itemcount":2
+		},
+		{
+			"itemname":"Veg Biriyani",
+			"itemprice": 180,
+			"itemcount":2
+		}
+		
+		
+		]
+		
+	
+	}

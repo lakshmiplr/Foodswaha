@@ -10,6 +10,8 @@ var argv = require('optimist').argv;
 
 var routes = require('./routes/index');
 var address = require('./routes/address');
+var order = require('./routes/order');
+
 
 var app = express();
 
@@ -29,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/address',address);
+app.use('/order',order);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
