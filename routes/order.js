@@ -29,7 +29,7 @@ router.post('/get', function(req, res, next) {
 		 console.log("results "+orders[0]);
 		if (typeof orders !== 'undefined' && orders.length > 0) {
 			try {
-				convertedJSON = JSON.parse(JSON.stringify(orders[0]));
+				convertedJSON = JSON.parse(JSON.stringify(orders));
 			} catch (err) {
 				console.log(err);
 			}
